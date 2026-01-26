@@ -82,6 +82,9 @@
             display: block;
             margin: 0 auto 1.25rem;
             filter: drop-shadow(0 14px 22px rgba(0,0,0,.35));
+        
+            max-height: 420px;
+            width: min(520px, 92vw);
         }
     .hero p {
             font-size: 1.35rem;
@@ -442,7 +445,7 @@ input, textarea {
 <body>
 <header>
 <nav>
-<div aria-label="Lumus band home" class="logo">LUMUS</div>
+<a class="logo-link" href="index.html" aria-label="Lumus band home"><img class="nav-logo" src="images/lumus-bulb-nav.png" alt="Lumus logo"></a>
 <button aria-controls="primaryNav" aria-expanded="false" class="menu-btn" id="menuBtn">MENU</button>
 <ul id="primaryNav">
 <li><a href="#about">About</a></li>
@@ -458,15 +461,15 @@ input, textarea {
 </nav>
 </header>
 <div class="hero" role="banner">
-<img alt="Lumus" class="hero-logo" decoding="async" loading="eager" src="images/lumus-logo-1.png"/>
-<p>Live Music. Real Energy. Unforgettable Nights.</p>
+<img alt="Lumus" class="hero-logo" decoding="async" loading="eager" src="images/lumus-bulb.png"/>
+<p>We get you going “oh-hellz-yeah!” with hand-picked, incredibly danceable rock-pop anthems—from the ’70s to right about now.</p>
 <a class="cta-button" href="#contact">Book Us For Your Event</a>
 <a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a>
 </div>
 <section id="about">
 <h2>About Lumus</h2>
 <div class="about-content">
-<div class="about-text"><p><strong>Lumus</strong> is a 5-piece cover band from Farmington, Maine: Multi-decade covers (’70s to now) with a sweet spot in the late ’90s and 2000s. We build our setlist the hard way: everyone brings picks, everyone gets a vote, and we only keep songs that wow the band and the crowd. We don’t mind playing “Stacy’s Mom,” but we love surprising people with a banger they forgot was a banger—then watching the room light up again. <em>Flagpole Sitta</em> is exactly that kind of moment.</p><p style="margin-top: 1rem;">What we cover is not random. We choose songs the hard way: everyone brings picks, everyone gets a vote, and we only keep what wows us as bandmates <em>and</em> works in a room. Different ages, different musical upbringings, one shared mission: make the night move.</p><p style="margin-top: 1rem;">Sure, we don’t mind playing <em>Stacy’s Mom</em>—but we’re happiest when we hit the crowd with a banger they forgot was a banger, and suddenly the whole place is grinning and singing again. <em>Flagpole Sitta</em> is exactly that kind of moment.</p><p style="margin-top: 1rem;">The band formed in 2022 after a chance meeting over a red drum kit in a pawnshop window (with Lake Street Dive floating by from a passing car—true story). Since then, we’ve brought the party to spots like Homestead Kitchen Bar &amp; Bakery, Farmhouse Beer Garden, and Ayuh Cider.</p><p style="margin-top: 1rem; opacity: 0.95;"><em>“This band is like wait-a-minute—What? Hellz yeah!”</em> —Shirley from Skowhegan</p></div>
+<div class="about-text"><p><strong>Lumus</strong> is a five-piece cover band out of Farmington, Maine, chasing the “oh-hellz-yeah!” moment—that split second when the chorus lands and the whole room lights up. We hand-pick every song (no filler), rehearse it tight, and deliver it with big harmonies, punchy grooves, and high energy.</p><p style="margin-top: 1rem;">The band formed in 2022 after a chance meeting over a red drum kit in a pawnshop window (with Lake Street Dive drifting by from a passing car—true story). Since then, we’ve brought the party to spots like Homestead Kitchen Bar &amp; Bakery, Farmhouse Beer Garden, and Ayuh Cider—plus weddings, private events, and festival stages across Maine.</p><p style="margin-top: 1rem;"><em>“This band is like wait-a-minute—What? Hellz yeah!”</em> —Shirley from Skowhegan</p></div>
 <div aria-label="Band photo" class="band-photo">
 <div class="band-photo-inner">
 <img alt="Lumus band photo" id="bandImg" src="./band-photo.jpg"/>
@@ -571,8 +574,11 @@ input, textarea {
 <p class="merch-text">
                     Limited runs, printed by hand. Submit an order request here and we’ll confirm sizing, price, and pickup/shipping.
                 </p>
-<form action="/thank-you.html" class="merch-form" data-netlify="true" method="POST" name="merch-orders">
+<form action="https://formsubmit.co/lumusband5@gmail.com" class="merch-form" method="POST" name="merch-orders">
 <input name="form-name" type="hidden" value="merch-orders"/>
+<input type="hidden" name="_subject" value="Lumus website form: merch-orders">
+<input type="hidden" name="_next" value="https://lumusband.github.io/thank-you.html">
+<input type="hidden" name="_captcha" value="false">
 <div class="form-group">
 <label for="m_name">Name</label>
 <input id="m_name" name="name" placeholder="Your name" required="" type="text"/>
@@ -622,8 +628,11 @@ input, textarea {
         Ready to bring live music to your event? Send an inquiry.
       </p>
 <!-- Netlify Forms: submissions go to Netlify, then forward notifications can be sent to lumusband5@gmail.com -->
-<form action="/thank-you.html" class="contact-form" data-netlify="true" method="POST" name="booking" netlify-honeypot="bot-field">
+<form action="https://formsubmit.co/lumusband5@gmail.com" class="contact-form" method="POST" name="booking" netlify-honeypot="bot-field">
 <input name="form-name" type="hidden" value="booking"/>
+<input type="hidden" name="_subject" value="Lumus website form: booking">
+<input type="hidden" name="_next" value="https://lumusband.github.io/thank-you.html">
+<input type="hidden" name="_captcha" value="false">
 <p style="display:none;">
 <label>Don’t fill this out if you're human: <input name="bot-field"/></label>
 </p>
