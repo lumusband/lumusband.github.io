@@ -21,17 +21,17 @@
     html{scroll-behavior:smooth;}
     body {
             font-family: 'Arial', sans-serif;
-            background: #1b1f27;
+            background: #0b0d10;
             color: #f3f4f6;
             line-height: 1.6;
             overflow-x: hidden;
         }
-    section,.contact {
-            background: linear-gradient(135deg, #24293a 0%, #1f2534 100%);
+    section {
+            background: transparent;
             padding: 4rem 2rem;
             margin-top: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 0;
+            border: none;
         }
     header {
             background: linear-gradient(135deg, #24293a 0%, #1f2534 100%);
@@ -58,29 +58,31 @@
         }
     .menu-btn{display:none;background:transparent;border:2px solid rgba(254,202,87,.45);color:var(--text);padding:.55rem .75rem;border-radius:10px;font-weight:800;cursor:pointer;}
     .menu-btn:focus{outline:none;border-color:var(--accent1);}
-    .hero {
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                        url('images/hero-wide.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-.hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #ffffff;
-        }
 
-        .hero p {
-            margin-top: 1.25rem;
-            font-size: 1.35rem;
+    .hero {
+            position: relative;
+            min-height: 620px;
+            background: #000 url('images/lumus-bulb.png') no-repeat center top;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 0;
+            text-align: left;
+            display: flex;
+            align-items: flex-end;
+        }
+    .hero-overlay{
+            width:100%;
+            padding: 2.2rem 1.25rem 2.6rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0));
+        }
+    .hero-inner{max-width:1200px;margin:0 auto;}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:flex-start;}
+    .hero p {
+            font-size: 1.25rem;
             color: rgba(254,202,87,0.95);
-            margin-bottom: 0;
+            margin: 1rem 0 0;
             font-weight: 600;
+            max-width: 52rem;
         }
     .cta-button{display:inline-block;padding:.95rem 2.75rem;background:linear-gradient(45deg,var(--accent1),var(--accent2));color:var(--text);text-decoration:none;border-radius:999px;font-weight:900;transition:transform .2s,box-shadow .2s;}
     .cta-button:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,107,107,.35);}
@@ -95,19 +97,13 @@
         }
     .about-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
     .about-text{font-size:1.1rem;line-height:1.85;color:#f0f0f0;}
-    .band-photo{background: transparent; padding: 0; border-radius: 12px;}
+    .band-photo{padding:0;border-radius:12px;}
     .band-photo-inner{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background: rgba(0,0,0,0.18);}
     .band-photo-inner img{width:100%;height:auto;display:block;}
     .photo-fallback{display:grid;place-items:center;padding:2.5rem 1.25rem;color:rgba(255,255,255,.85);text-align:center;}
     .photo-fallback strong{color:var(--accent2);}
     .debug{margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.75);word-break:break-word;}
-    .music-section {
-            background: #202636;
-            padding: 4rem 2rem;
-            margin: 2rem 0;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
+    .music-section {background: transparent; padding: 0; margin: 0; border: none;}
     .spotify-container {
             max-width: 800px;
             margin: 0 auto;
@@ -117,7 +113,7 @@
             background: #ffffff;
         }
     .spotify-container iframe{display:block;}
-    .band-members{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2rem;}
+    .band-members{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2rem;align-items:start;}
     .member {
             background: #252b3b;
             padding: 2rem;
@@ -132,7 +128,7 @@
         }
     .member h3{color:var(--accent2);margin-bottom:.35rem;}
     .member p{color:var(--muted);}
-    .contact{background:linear-gradient(135deg,var(--panel) 0%,var(--panel2) 100%);padding:0;margin-top:2rem;border-radius:12px;border:1px solid rgba(255,255,255,.05);}
+    .contact{background:transparent;padding:0;margin-top:2rem;border-radius:0;border:none;}
     .contact-form{max-width:680px;margin:0 auto;}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
     .form-group{margin-bottom:1.15rem;}
@@ -160,8 +156,9 @@
     .social a:hover{text-decoration:underline;}
     .member-photo{
       width: 100%;
-      height: 260px;
+      height: 180px;
       object-fit: cover;
+      object-position: center;
       border-radius: 10px;
       margin-bottom: 1rem;
       border: 1px solid rgba(255,255,255,0.06);
@@ -174,6 +171,10 @@
       color: rgba(255,255,255,0.7);
       font-size: 0.9rem;
     }
+
+    /* Responsive band member grid */
+    @media (max-width: 1100px){ .band-members{grid-template-columns:repeat(3,1fr);} }
+    @media (max-width: 768px){ .band-members{grid-template-columns:repeat(2,1fr);} }
 
 
     @media (max-width:860px){.about-content{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
@@ -389,9 +390,15 @@ input, textarea {
 </nav>
 </header>
 <div class="hero" role="banner">
-
+<div class="hero-overlay">
+<div class="hero-inner">
+<div class="hero-actions">
 <a class="cta-button" href="#contact">Book Us For Your Event</a>
-<a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a><p>We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000's to right about now.</p>
+<a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a>
+</div>
+<p>We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000's to right about now.</p>
+</div>
+</div>
 </div>
 <section id="about">
 <h2>About Lumus</h2>
@@ -404,6 +411,74 @@ input, textarea {
 </div>
 </div>
 </div>
+</section>
+<section id="shows">
+<h2>Upcoming Shows</h2>
+<p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">
+            Dates update as we book them. Want us at your venue? Use the booking form below.
+        </p>
+<div class="shows-grid"><div class="show-card">
+<div class="show-date">
+<span class="month">FEB</span>
+<span class="day">27</span>
+</div>
+<div class="show-info">
+<h3>The Rack</h3>
+<p class="show-meta">Details coming soon</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="#" onclick="alert('Show link coming soon.'); return false;">Details</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">MAY</span>
+<span class="day">24</span>
+</div>
+<div class="show-info">
+<h3>Sandy River Music Festival</h3>
+<p class="show-meta">Saturday • 3:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener" target="_blank">Event page</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">JUN</span>
+<span class="day">20</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">AUG</span>
+<span class="day">22</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">AUG</span>
+<span class="day">26</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden <small>(Harvest Fest)</small></h3>
+<p class="show-meta">5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
+</div>
+</div></div>
+</section>
 <section id="photos">
 <h2>Photos</h2>
 <p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">Live shots, band moments, and the chaos we approve of.</p>
@@ -415,88 +490,6 @@ input, textarea {
 <button aria-label="Next photo" class="slide-nav next" type="button">›</button>
 </div>
 <div aria-label="Slideshow navigation" class="dots"></div>
-</section>
-<section id="shows">
-<h2>Upcoming Shows</h2>
-<p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">
-            Dates update as we book them. Want us at your venue? Use the booking form below.
-        </p>
-<div class="shows-grid">
-
-  <div class="show-card">
-    <div class="show-date">
-      <span class="month">FEB</span>
-      <span class="day">27</span>
-    </div>
-    <div class="show-info">
-      <h3>The Rack</h3>
-      <p class="show-meta">Feb 27 • (time TBD)</p>
-    </div>
-    <div class="show-actions">
-      <a class="mini-btn" href="#contact">Book us</a>
-    </div>
-  </div>
-
-  <div class="show-card">
-    <div class="show-date">
-      <span class="month">MAY</span>
-      <span class="day">24</span>
-    </div>
-    <div class="show-info">
-      <h3>Sandy River Music Festival</h3>
-      <p class="show-meta">May 24 • 3:00 PM</p>
-    </div>
-    <div class="show-actions">
-      <a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" target="_blank" rel="noopener">Event page</a>
-    </div>
-  </div>
-
-  <div class="show-card">
-    <div class="show-date">
-      <span class="month">JUN</span>
-      <span class="day">20</span>
-    </div>
-    <div class="show-info">
-      <h3>Farmhouse</h3>
-      <p class="show-meta">Jun 20 • 5–8 PM</p>
-    </div>
-    <div class="show-actions">
-      <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" target="_blank" rel="noopener">Venue page</a>
-    </div>
-  </div>
-
-  <div class="show-card">
-    <div class="show-date">
-      <span class="month">AUG</span>
-      <span class="day">22</span>
-    </div>
-    <div class="show-info">
-      <h3>Farmhouse</h3>
-      <p class="show-meta">Aug 22 • 5–8 PM</p>
-    </div>
-    <div class="show-actions">
-      <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" target="_blank" rel="noopener">Venue page</a>
-    </div>
-  </div>
-
-  <div class="show-card">
-    <div class="show-date">
-      <span class="month">AUG</span>
-      <span class="day">26</span>
-    </div>
-    <div class="show-info">
-      <h3>Farmhouse (Harvest Fest)</h3>
-      <p class="show-meta">Aug 26 • 5–8 PM</p>
-    </div>
-    <div class="show-actions">
-      <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" target="_blank" rel="noopener">Venue page</a>
-    </div>
-  </div>
-
-</div>
-
-</div></div>
-</section>
 </section>
 <div class="music-section" id="music">
 <section>
@@ -563,12 +556,12 @@ input, textarea {
 <div class="form-row">
 <div class="form-group">
 <label for="name">Name</label>
-<input autocomplete="name" id="name" name="name" placeholder="Your name" required="" type="text">
-</input></div>
+<input autocomplete="name" id="name" name="name" placeholder="Your name" required="" type="text"/>
+</div>
 <div class="form-group">
 <label for="email">Email</label>
-<input autocomplete="email" id="email" name="email" placeholder="your@email.com" required="" type="email">
-</input></div>
+<input autocomplete="email" id="email" name="email" placeholder="your@email.com" required="" type="email"/>
+</div>
 </div>
 <div class="form-row">
 <div class="form-group">
