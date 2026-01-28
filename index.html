@@ -5,10 +5,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lumus - Live Cover Band</title>
-    <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="images/favicon-16.png" sizes="16x16">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link href="images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="images/favicon.png" rel="icon" type="image/png"/>
 <meta content="Lumus is a high-energy 5-piece cover band bringing live music to weddings, festivals, clubs, and private events." name="description"/>
 <style>
 
@@ -76,9 +76,10 @@
         }
 
         .hero p {
+            margin-top: 1.25rem;
             font-size: 1.35rem;
             color: rgba(254,202,87,0.95);
-            margin-bottom: 2rem;
+            margin-bottom: 0;
             font-weight: 600;
         }
     .cta-button{display:inline-block;padding:.95rem 2.75rem;background:linear-gradient(45deg,var(--accent1),var(--accent2));color:var(--text);text-decoration:none;border-radius:999px;font-weight:900;transition:transform .2s,box-shadow .2s;}
@@ -94,7 +95,7 @@
         }
     .about-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
     .about-text{font-size:1.1rem;line-height:1.85;color:#f0f0f0;}
-    .band-photo{padding:0;border-radius:12px;background:transparent;}
+    .band-photo{background: transparent; padding: 0; border-radius: 12px;}
     .band-photo-inner{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background: rgba(0,0,0,0.18);}
     .band-photo-inner img{width:100%;height:auto;display:block;}
     .photo-fallback{display:grid;place-items:center;padding:2.5rem 1.25rem;color:rgba(255,255,255,.85);text-align:center;}
@@ -382,23 +383,15 @@ input, textarea {
 <body>
 <header>
 <nav>
-<a class="logo-link" href="index.html" aria-label="Lumus band home"><span class="logo">LUMUS</span></a>
+<a aria-label="Lumus band home" class="logo-link" href="index.html"><span class="logo">LUMUS</span></a>
 <button aria-controls="primaryNav" aria-expanded="false" class="menu-btn" id="menuBtn">MENU</button>
-<ul id="primaryNav">
-<li><a href="#about">About</a></li>
-<li><a href="#music">Music</a></li>
-<li><a href="#shows">Shows</a></li>
-<li><a href="#photos">Photos</a></li>
-<li><a href="presskit.html">Press Kit</a></li>
-<li><a href="#members">Band</a></li>
-<li><a href="#contact">Book Us</a></li>
-</ul>
+<ul id="primaryNav"><li><a href="#about">About</a></li><li><a href="#shows">Shows</a></li><li><a href="#photos">Photos</a></li><li><a href="#music">Music</a></li><li><a href="presskit.html">Press Kit</a></li><li><a href="#members">Band</a></li><li><a href="#contact">Book Us</a></li></ul>
 </nav>
 </header>
 <div class="hero" role="banner">
-<p>We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000&#39;s to right about now.</p>
+
 <a class="cta-button" href="#contact">Book Us For Your Event</a>
-<a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a>
+<a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a><p>We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000's to right about now.</p>
 </div>
 <section id="about">
 <h2>About Lumus</h2>
@@ -428,76 +421,67 @@ input, textarea {
 <p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">
             Dates update as we book them. Want us at your venue? Use the booking form below.
         </p>
-<div class="shows-grid">
-<div class="show-card">
-  <div class="show-date">
-    <span class="month">MAY</span>
-    <span class="day">24</span>
-  </div>
-  <div class="show-info">
-    <h3>Sandy River Music Festival</h3>
-    <p class="show-meta">Saturday • 3:00 PM</p>
-  </div>
-  <div class="show-actions">
-    <a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener" target="_blank">Event page</a>
-  </div>
+<div class="shows-grid"><div class="show-card">
+<div class="show-date">
+<span class="month">FEB</span>
+<span class="day">27</span>
 </div>
-
-<div class="show-card">
-  <div class="show-date">
-    <span class="month">FEB</span>
-    <span class="day">27</span>
-  </div>
-  <div class="show-info">
-    <h3>The Rack</h3>
-    <p class="show-meta">Details coming soon</p>
-  </div>
-  <div class="show-actions">
-    <a class="mini-btn" href="#" onclick="alert('Show link coming soon.'); return false;">Details</a>
-  </div>
+<div class="show-info">
+<h3>The Rack</h3>
+<p class="show-meta">Details coming soon</p>
 </div>
-<div class="show-card">
-  <div class="show-date">
-    <span class="month">JUN</span>
-    <span class="day">20</span>
-  </div>
-  <div class="show-info">
-    <h3>Farmhouse Beer Garden</h3>
-    <p class="show-meta">5:00–8:00 PM</p>
-  </div>
-  <div class="show-actions">
-    <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
-  </div>
+<div class="show-actions">
+<a class="mini-btn" href="#" onclick="alert('Show link coming soon.'); return false;">Details</a>
 </div>
-
-<div class="show-card">
-  <div class="show-date">
-    <span class="month">AUG</span>
-    <span class="day">22</span>
-  </div>
-  <div class="show-info">
-    <h3>Farmhouse Beer Garden</h3>
-    <p class="show-meta">5:00–8:00 PM</p>
-  </div>
-  <div class="show-actions">
-    <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
-  </div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">MAY</span>
+<span class="day">24</span>
 </div>
-
-<div class="show-card">
-  <div class="show-date">
-    <span class="month">AUG</span>
-    <span class="day">26</span>
-  </div>
-  <div class="show-info">
-    <h3>Farmhouse Beer Garden <small>(Harvest Fest)</small></h3>
-    <p class="show-meta">5:00–8:00 PM</p>
-  </div>
-  <div class="show-actions">
-    <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
-  </div>
+<div class="show-info">
+<h3>Sandy River Music Festival</h3>
+<p class="show-meta">Saturday • 3:00 PM</p>
 </div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener" target="_blank">Event page</a>
 </div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">AUG</span>
+<span class="day">26</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden <small>(Harvest Fest)</small></h3>
+<p class="show-meta">5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">JUN</span>
+<span class="day">20</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">AUG</span>
+<span class="day">22</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
+</div>
+</div></div>
 </section>
 </section>
 <div class="music-section" id="music">
@@ -556,21 +540,21 @@ input, textarea {
 <!-- Netlify Forms: submissions go to Netlify, then forward notifications can be sent to lumusband5@gmail.com -->
 <form action="https://formsubmit.co/lumusband5@gmail.com" class="contact-form" method="POST" name="booking" netlify-honeypot="bot-field">
 <input name="form-name" type="hidden" value="booking"/>
-<input type="hidden" name="_subject" value="Lumus website form: booking">
-<input type="hidden" name="_next" value="https://lumusband.github.io/thank-you.html">
-<input type="hidden" name="_captcha" value="false">
+<input name="_subject" type="hidden" value="Lumus website form: booking"/>
+<input name="_next" type="hidden" value="https://lumusband.github.io/thank-you.html"/>
+<input name="_captcha" type="hidden" value="false"/>
 <p style="display:none;">
 <label>Don’t fill this out if you're human: <input name="bot-field"/></label>
 </p>
 <div class="form-row">
 <div class="form-group">
 <label for="name">Name</label>
-<input autocomplete="name" id="name" name="name" placeholder="Your name" required="" type="text"/>
-</div>
+<input autocomplete="name" id="name" name="name" placeholder="Your name" required="" type="text">
+</input></div>
 <div class="form-group">
 <label for="email">Email</label>
-<input autocomplete="email" id="email" name="email" placeholder="your@email.com" required="" type="email"/>
-</div>
+<input autocomplete="email" id="email" name="email" placeholder="your@email.com" required="" type="email">
+</input></div>
 </div>
 <div class="form-row">
 <div class="form-group">
