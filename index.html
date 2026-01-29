@@ -206,112 +206,6 @@ input, textarea {
             font-size: 1rem;
         }
 
-        /* Slideshow */
-        .slideshow {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.06);
-            background: rgba(0,0,0,0.18);
-            box-shadow: 0 16px 45px rgba(0,0,0,0.35);
-        }
-
-        .slides {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            outline: none;
-            background: rgba(0,0,0,0.18);
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: rgba(0,0,0,0.20);
-            opacity: 0;
-            transition: opacity 400ms ease;
-        }
-
-        .slide.is-active {
-            opacity: 1;
-        }
-
-        .slide-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            border: 0;
-            width: 44px;
-            height: 44px;
-            border-radius: 999px;
-            cursor: pointer;
-            z-index: 2;
-            font-size: 28px;
-            line-height: 44px;
-            font-weight: 800;
-            background: rgba(20,22,26,0.75);
-            color: rgba(255,255,255,0.92);
-            transition: transform 0.15s ease, background 0.2s ease;
-            backdrop-filter: blur(8px);
-        }
-
-        .slide-nav:hover {
-            transform: translateY(-50%) scale(1.04);
-            background: rgba(20,22,26,0.88);
-        }
-
-        .slide-nav:active {
-            transform: translateY(-50%) scale(0.98);
-        }
-
-        .slide-nav.prev { left: 12px; }
-        .slide-nav.next { right: 12px; }
-
-        .dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 999px;
-            border: 0;
-            cursor: pointer;
-            background: rgba(255,255,255,0.20);
-            transition: transform 0.15s ease, background 0.2s ease;
-        }
-
-        .dot.is-active {
-            background: rgba(254,202,87,0.95);
-            transform: scale(1.15);
-        }
-
-        @media (max-width: 768px) {
-            .slides { aspect-ratio: 4 / 3; }
-            .slide-nav { width: 40px; height: 40px; font-size: 26px; line-height: 40px; }
-        }
-
-
-        /* Secondary CTA */
-        .cta-secondary {
-            margin-left: 1rem;
-            background: transparent;
-            border: 2px solid rgba(254,202,87,0.85);
-            color: rgba(254,202,87,0.95);
-        }
-        .cta-secondary:hover {
-            box-shadow: 0 10px 30px rgba(254,202,87,0.22);
-        }
-
         /* Shows */
         .shows-grid {
             display: grid;
@@ -396,7 +290,8 @@ input, textarea {
 <nav>
 <a aria-label="Lumus band home" class="logo-link" href="index.html"><span class="logo">LUMUS</span></a>
 <button aria-controls="primaryNav" aria-expanded="false" class="menu-btn" id="menuBtn">MENU</button>
-<ul id="primaryNav"><li><a href="#about">About</a></li><li><a href="#shows">Shows</a></li><li><a href="#photos">Photos</a></li><li><a href="#music">Music</a></li><li><a href="#members">Band</a></li><li><a href="#contact">Book Us</a></li></ul>
+<ul id="primaryNav"><li><a href="#about">About</a></li><li><a href="#shows">Shows</a></li>
+<li><a href="#music">Music</a></li><li><a href="#members">Band</a></li><li><a href="#contact">Book Us</a></li></ul>
 </nav>
 </header>
 <div class="hero hero-band" role="banner" aria-label="Lumus band photo hero">
@@ -487,18 +382,6 @@ input, textarea {
 <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
 </div>
 </div></div>
-</section>
-<section id="photos">
-<h2>Photos</h2>
-<p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">Live shots, band moments, and the chaos we approve of.</p>
-<div aria-roledescription="carousel" class="slideshow">
-<button aria-label="Previous photo" class="slide-nav prev" type="button">‹</button>
-<div aria-label="Band photo slideshow" class="slides" tabindex="0">
-<img alt="Lumus photo 1" class="slide is-active" decoding="async" loading="lazy" src="images/slideshow/slide-01.jpg"/><img alt="Lumus photo 2" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-02.jpg"/><img alt="Lumus photo 3" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-03.jpg"/><img alt="Lumus photo 4" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-04.jpg"/><img alt="Lumus photo 5" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-05.jpg"/><img alt="Lumus photo 6" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-06.jpg"/><img alt="Lumus photo 7" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-07.jpg"/><img alt="Lumus photo 8" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-08.jpg"/><img alt="Lumus photo 9" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-09.jpg"/><img alt="Lumus photo 10" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-10.jpg"/><img alt="Lumus photo 11" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-11.jpg"/><img alt="Lumus photo 12" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-12.jpg"/><img alt="Lumus photo 13" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-13.jpg"/><img alt="Lumus photo 14" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-14.jpg"/><img alt="Lumus photo 15" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-15.jpg"/><img alt="Lumus photo 16" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-16.jpg"/><img alt="Lumus photo 17" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-17.jpg"/><img alt="Lumus photo 18" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-18.jpg"/><img alt="Lumus photo 19" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-19.jpg"/><img alt="Lumus photo 20" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-20.jpg"/><img alt="Lumus photo 21" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-21.jpg"/><img alt="Lumus photo 22" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-22.jpg"/><img alt="Lumus photo 23" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-23.jpg"/><img alt="Lumus photo 24" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-24.jpg"/><img alt="Lumus photo 25" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-25.jpg"/><img alt="Lumus photo 26" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-26.jpg"/><img alt="Lumus photo 27" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-27.jpg"/><img alt="Lumus photo 28" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-28.jpg"/><img alt="Lumus photo 29" class="slide" decoding="async" loading="lazy" src="images/slideshow/slide-29.jpg"/>
-</div>
-<button aria-label="Next photo" class="slide-nav next" type="button">›</button>
-</div>
-<div aria-label="Slideshow navigation" class="dots"></div>
 </section>
 <div class="music-section" id="music">
 <section>
@@ -636,94 +519,6 @@ input, textarea {
     // (Removed: old mailto-based booking code)
 
 </script>
-<script>
-      (function () {
-        const slides = Array.from(document.querySelectorAll('#photos .slide'));
-        const dotsWrap = document.querySelector('#photos .dots');
-        const prevBtn = document.querySelector('#photos .prev');
-        const nextBtn = document.querySelector('#photos .next');
-        const slidesEl = document.querySelector('#photos .slides');
-
-        if (!slides.length || !dotsWrap || !prevBtn || !nextBtn || !slidesEl) return;
-
-        let index = 0;
-        let timer = null;
-        const AUTOPLAY_MS = 4500;
-
-        function render() {
-          slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
-          Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('is-active', i === index));
-        }
-
-        function goTo(i) {
-          index = (i + slides.length) % slides.length;
-          render();
-        }
-
-        function next() { goTo(index + 1); }
-        function prev() { goTo(index - 1); }
-
-        function stop() {
-          if (timer) clearInterval(timer);
-          timer = null;
-        }
-
-        function start() {
-          stop();
-          timer = setInterval(next, AUTOPLAY_MS);
-        }
-
-        // Build dots
-        slides.forEach((_, i) => {
-          const b = document.createElement('button');
-          b.type = 'button';
-          b.className = 'dot';
-          b.setAttribute('aria-label', 'Go to photo ' + (i + 1));
-          b.addEventListener('click', () => { goTo(i); start(); });
-          dotsWrap.appendChild(b);
-        });
-
-        // Buttons
-        nextBtn.addEventListener('click', () => { next(); start(); });
-        prevBtn.addEventListener('click', () => { prev(); start(); });
-
-        // Pause on hover/focus (desktop)
-        const wrap = document.querySelector('#photos .slideshow');
-        wrap.addEventListener('mouseenter', stop);
-        wrap.addEventListener('mouseleave', start);
-        wrap.addEventListener('focusin', stop);
-        wrap.addEventListener('focusout', start);
-
-        // Keyboard
-        slidesEl.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowRight') { e.preventDefault(); next(); start(); }
-          if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); start(); }
-        });
-
-        // Swipe (mobile)
-        let startX = null;
-        slidesEl.addEventListener('touchstart', (e) => {
-          if (!e.touches || !e.touches.length) return;
-          startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        slidesEl.addEventListener('touchend', (e) => {
-          if (startX === null) return;
-          const endX = (e.changedTouches && e.changedTouches.length) ? e.changedTouches[0].clientX : null;
-          if (endX === null) { startX = null; return; }
-          const dx = endX - startX;
-          if (Math.abs(dx) > 40) {
-            dx < 0 ? next() : prev();
-            start();
-          }
-          startX = null;
-        }, { passive: true });
-
-        // Init
-        goTo(0);
-        start();
-      })();
-    </script>
 </body>
 </html
         /* Hero CTA (below band photo) */
