@@ -59,31 +59,50 @@
     .menu-btn{display:none;background:transparent;border:2px solid rgba(254,202,87,.45);color:var(--text);padding:.55rem .75rem;border-radius:10px;font-weight:800;cursor:pointer;}
     .menu-btn:focus{outline:none;border-color:var(--accent1);}
 
-    .hero {
-            position: relative;
-            min-height: 620px;
-            background: #000 url('images/lumus-bulb.png') no-repeat center top;
+    .hero{
+            margin-top: 0;
+        }
+
+        /* Band photo hero (top) */
+        .hero-band{
+            background: #000;
+        }
+        .hero-band-img{
+            width: 100%;
+            height: clamp(280px, 55vh, 560px);
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* Bulb/logo hero (second) */
+        .hero-bulb{
+            background: url('images/lumus-bulb.png') no-repeat center top;
             background-size: contain;
-            background-repeat: no-repeat;
-            padding: 0;
-            text-align: left;
+            background-color: #1b1f27;
+            padding: 2rem 2rem 3rem;
+            min-height: clamp(360px, 60vh, 640px);
             display: flex;
             align-items: flex-end;
+            justify-content: flex-start;
         }
-    .hero-overlay{
+        .hero-bulb-content{
+            max-width: 720px;
+        }
+        .hero-tagline{
+            font-size: 1.15rem;
+            color: rgba(254,202,87,0.95);
+            margin: 1rem 0 1.25rem;
+            font-weight: 650;
+            text-shadow: 0 10px 22px rgba(0,0,0,0.40);
+        }
+.hero-overlay{
             width:100%;
             padding: 2.2rem 1.25rem 2.6rem;
             background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0));
         }
     .hero-inner{max-width:1200px;margin:0 auto;}
     .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:flex-start;}
-    .hero p {
-            font-size: 1.25rem;
-            color: rgba(254,202,87,0.95);
-            margin: 1rem 0 0;
-            font-weight: 600;
-            max-width: 52rem;
-        }
     .cta-button{display:inline-block;padding:.95rem 2.75rem;background:linear-gradient(45deg,var(--accent1),var(--accent2));color:var(--text);text-decoration:none;border-radius:999px;font-weight:900;transition:transform .2s,box-shadow .2s;}
     .cta-button:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,107,107,.35);}
     section{max-width:1200px;margin:0 auto;padding:4rem 1.25rem;}
@@ -389,17 +408,18 @@ input, textarea {
 <ul id="primaryNav"><li><a href="#about">About</a></li><li><a href="#shows">Shows</a></li><li><a href="#photos">Photos</a></li><li><a href="#music">Music</a></li><li><a href="#members">Band</a></li><li><a href="#contact">Book Us</a></li></ul>
 </nav>
 </header>
-<div class="hero" role="banner">
-<div class="hero-overlay">
-<div class="hero-inner">
-<div class="hero-actions">
-<a class="cta-button" href="#contact">Book Us For Your Event</a>
-<a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a>
+<div class="hero hero-band" role="banner" aria-label="Lumus band photo hero">
+  <img class="hero-band-img" src="band-photo.jpg" alt="Lumus performing live"/>
 </div>
-<p>We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000's to right about now.</p>
+
+<div class="hero hero-bulb" aria-label="Lumus logo hero">
+  <div class="hero-bulb-content">
+    <a class="cta-button" href="#contact">Book Us For Your Event</a>
+    <p class="hero-tagline">We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000's to right about now.</p>
+    <a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a>
+  </div>
 </div>
-</div>
-</div>
+
 <section id="about">
 <h2>About Lumus</h2>
 <div class="about-content">
