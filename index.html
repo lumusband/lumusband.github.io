@@ -242,8 +242,8 @@
       }
 
       .tipjar-link img {
-        width: 160px;
-        max-width: 42vw;
+        width: var(--tipjar-size, 112px);
+        max-width: none;
         height: auto;
         display: block;
         border-radius: 14px;
@@ -280,29 +280,36 @@
 
       .tipjar-hero {
         position: absolute;
-        right: 18px;
-        bottom: 18px;
+        right: calc(12px + env(safe-area-inset-right));
+        bottom: calc(12px + env(safe-area-inset-bottom));
         z-index: 5;
+        --tipjar-size: 112px;
       }
 
       .tipjar-footer {
-  position: relative;
         position: absolute;
-        right: 18px;
-        bottom: 18px;
+        right: calc(12px + env(safe-area-inset-right));
+        bottom: calc(12px + env(safe-area-inset-bottom));
         z-index: 2;
+        --tipjar-size: 96px;
       }
 
-      .tipjar-footer img {
-        width: 110px;
-        max-width: 34vw;
-      }
+      /* Smaller tip jar on phones */
       @media (max-width: 768px) {
-        .tipjar-hero img {
-          width: 128px;
+        .tipjar-hero {
+          --tipjar-size: 84px;
         }
-        .tipjar-footer img {
-          width: 92px;
+        .tipjar-footer {
+          --tipjar-size: 72px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .tipjar-hero {
+          --tipjar-size: 72px;
+        }
+        .tipjar-footer {
+          --tipjar-size: 64px;
         }
       }
 
