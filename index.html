@@ -1,520 +1,928 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lumus - Live Cover Band</title>
-<link href="images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="images/favicon.png" rel="icon" type="image/png"/>
-<meta content="Lumus is a high-energy 5-piece cover band bringing live music to weddings, festivals, clubs, and private events." name="description"/>
-<style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumus - Live Cover Band</title>
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root{
-      --bg:#0a0a0a; --panel:#1a1a2e; --panel2:#16213e;
-      --accent1:#ff6b6b; --accent2:#feca57; --text:#fff; --muted:#bbb;
-      --border:#333; --headerH:88px;
-    }
-    html{scroll-behavior:smooth;}
-    body {
-            font-family: 'Arial', sans-serif;
-            background: #0b0d10;
-            color: #f3f4f6;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-    section {
-            background: transparent;
-            padding: 4rem 2rem;
-            margin-top: 2rem;
-            border-radius: 0;
-            border: none;
-        }
-    header {
-            background: linear-gradient(135deg, #24293a 0%, #1f2534 100%);
-            padding: 1.6rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-    nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 1.25rem;gap:1rem;}
-    .logo{font-size:2.25rem;font-weight:800;letter-spacing:1px;background:linear-gradient(45deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 30px rgba(255,107,107,.25);white-space:nowrap;}
-    .logo-link{display:flex;align-items:center;gap:.5rem;text-decoration:none;}
-    .nav-logo{height:44px;width:auto;display:block;filter:drop-shadow(0 6px 20px rgba(0,0,0,.35));}
-    nav ul{list-style:none;display:flex;gap:1.5rem;align-items:center;}
-    nav a {
-            color: rgba(243,244,246,0.92);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-    nav a:hover {
-            color: #feca57;
-        }
-    .menu-btn{display:none;background:transparent;border:2px solid rgba(254,202,87,.45);color:var(--text);padding:.55rem .75rem;border-radius:10px;font-weight:800;cursor:pointer;}
-    .menu-btn:focus{outline:none;border-color:var(--accent1);}
+    <meta
+      name="description"
+      content="Lumus is a high-energy 5-piece cover band bringing live music to weddings, festivals, clubs, and private events."
+    />
+    <meta name="theme-color" content="#0b0d10" />
 
-    .hero{
-            margin-top: 0;
+    <!-- If you ever move off GitHub Pages, update these URLs (favicons + share image) to your new domain. -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <meta property="og:title" content="Lumus - Live Cover Band" />
+    <meta
+      property="og:description"
+      content="High-energy 5-piece cover band in Maine. Big harmonies, punchy grooves, and a packed dance floor."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lumusband.github.io/band-photo.jpg" />
+    <meta property="og:url" content="https://lumusband.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #0b0d10;
+        --panel: #1f2534;
+        --panel2: #252b3b;
+        --accent1: #ff6b6b;
+        --accent2: #feca57;
+        --text: #f3f4f6;
+        --muted: rgba(243, 244, 246, 0.82);
+        --border: rgba(255, 255, 255, 0.08);
+        --shadow: rgba(0, 0, 0, 0.35);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Accessibility */
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 10px;
+        background: #000;
+        color: #fff;
+        padding: 0.65rem 0.9rem;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        z-index: 999;
+      }
+      .skip-link:focus {
+        left: 10px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #24293a 0%, #1f2534 100%);
+        padding: 1.15rem 0;
+        box-shadow: 0 10px 30px var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.25rem;
+        gap: 1rem;
+      }
+
+      .logo {
+        font-size: 2.25rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        background: linear-gradient(45deg, var(--accent1), var(--accent2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(255, 107, 107, 0.25);
+        white-space: nowrap;
+      }
+
+      .logo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: rgba(243, 244, 246, 0.92);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.2s ease;
+      }
+      nav a:hover {
+        color: var(--accent2);
+      }
+
+      .menu-btn {
+        display: none;
+        background: transparent;
+        border: 2px solid rgba(254, 202, 87, 0.45);
+        color: var(--text);
+        padding: 0.55rem 0.75rem;
+        border-radius: 10px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .menu-btn:focus {
+        outline: none;
+        border-color: var(--accent1);
+      }
+
+      /* Hero band photo */
+      .hero-band {
+        padding: 0;
+        margin-top: 0;
+        background: #000;
+      }
+      .hero-band-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        background: #000;
+      }
+
+      /* Hero CTA (below band photo) */
+      .hero-cta {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.25rem 1.25rem 0.5rem;
+        display: flex;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .hero-tagline {
+        margin: 0;
+        font-size: 1.1rem;
+        color: rgba(254, 202, 87, 0.95);
+        font-weight: 650;
+        text-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+        flex: 1 1 420px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 0.95rem 2.2rem;
+        background: linear-gradient(45deg, var(--accent1), var(--accent2));
+        color: #111827;
+        text-decoration: none;
+        border-radius: 999px;
+        font-weight: 950;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        box-shadow: 0 12px 30px rgba(255, 107, 107, 0.25);
+      }
+      .cta-button:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.02);
+        box-shadow: 0 16px 45px rgba(255, 107, 107, 0.32);
+      }
+      .cta-secondary {
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(255, 255, 255, 0.92);
+        box-shadow: none;
+      }
+      .cta-secondary:hover {
+        background: rgba(0, 0, 0, 0.28);
+      }
+
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1.25rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        background: linear-gradient(45deg, var(--accent1), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* About */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .band-photo {
+        padding: 0;
+      }
+      .band-photo-inner {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.18);
+      }
+      .band-photo-inner img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Shows */
+      .shows-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .show-card {
+        display: grid;
+        grid-template-columns: 90px 1fr auto;
+        gap: 1.25rem;
+        align-items: center;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.25rem;
+      }
+      .show-date {
+        width: 90px;
+        height: 90px;
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid var(--border);
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+      .show-date .month {
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: rgba(254, 202, 87, 0.95);
+      }
+      .show-date .day {
+        font-size: 1.7rem;
+        font-weight: 950;
+      }
+      .show-info h3 {
+        margin-bottom: 0.25rem;
+        color: rgba(255, 255, 255, 0.96);
+      }
+      .show-meta {
+        opacity: 0.86;
+      }
+      .show-actions {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .mini-btn {
+        display: inline-block;
+        padding: 0.65rem 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 0.95rem;
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.92);
+        transition: transform 0.12s ease, background 0.2s ease;
+      }
+      .mini-btn:hover {
+        transform: translateY(-1px);
+        background: rgba(0, 0, 0, 0.28);
+      }
+
+      /* Music */
+      .music-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.25rem 1.25rem 1.4rem;
+      }
+      .music-wrap p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1rem;
+      }
+      .music-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .music-actions a {
+        text-decoration: none;
+      }
+
+      /* Band members */
+      .band-members {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+        align-items: start;
+      }
+
+      .member {
+        background: var(--panel2);
+        padding: 1.6rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid var(--border);
+      }
+
+      .member:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 35px rgba(17, 24, 39, 0.12);
+      }
+
+      .member-photo {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        background: #000;
+      }
+
+      .member h3 {
+        color: rgba(254, 202, 87, 0.95);
+        margin-bottom: 0.35rem;
+      }
+      .member p {
+        color: var(--muted);
+      }
+
+      /* Contact */
+      .contact-form {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .form-group {
+        margin-bottom: 1.15rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: rgba(254, 202, 87, 0.95);
+        font-weight: 800;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        background: #151922;
+        border: 2px solid #353b4f;
+        border-radius: 10px;
+        color: var(--text);
+        font-size: 1rem;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--accent1);
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(45deg, var(--accent1), var(--accent2));
+        color: #111827;
+        border: none;
+        border-radius: 999px;
+        font-size: 1.05rem;
+        font-weight: 950;
+        cursor: pointer;
+        transition: transform 0.15s ease, filter 0.15s ease;
+      }
+      button[type="submit"]:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.02);
+      }
+
+      footer {
+        background: #151922;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+        border-top: 1px solid var(--border);
+        color: rgba(243, 244, 246, 0.82);
+      }
+
+      .social a {
+        color: rgba(254, 202, 87, 0.95);
+        margin: 0 0.9rem;
+        text-decoration: none;
+        font-weight: 900;
+      }
+      .social a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 1100px) {
+        .band-members {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 860px) {
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-btn {
+          display: inline-block;
         }
 
-        /* Band photo hero (top) */
-        .hero-band{
-            padding: 0;
-            margin-top: 0;
-            background: #000;
-            border-radius: 0;
-            border: 0;
+        nav ul {
+          position: absolute;
+          top: 100%;
+          right: 1.25rem;
+          left: 1.25rem;
+          display: none;
+          flex-direction: column;
+          gap: 0.75rem;
+          background: rgba(10, 10, 10, 0.92);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 14px;
+          padding: 1rem;
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
         }
-        .hero-band-img{
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            background: #000;
+        nav ul.open {
+          display: flex;
         }
-
-        /* Bulb/logo hero (second) */
-        .hero-tagline{
-            font-size: 1.15rem;
-            color: rgba(254,202,87,0.95);
-            margin: 1rem 0 1.25rem;
-            font-weight: 650;
-            text-shadow: 0 10px 22px rgba(0,0,0,0.40);
-        }
-.hero-overlay{
-            width:100%;
-            padding: 2.2rem 1.25rem 2.6rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0));
-        }
-    .hero-inner{max-width:1200px;margin:0 auto;}
-    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:flex-start;}
-    .cta-button{display:inline-block;padding:.95rem 2.75rem;background:linear-gradient(45deg,var(--accent1),var(--accent2));color:var(--text);text-decoration:none;border-radius:999px;font-weight:900;transition:transform .2s,box-shadow .2s;}
-    .cta-button:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,107,107,.35);}
-    section{max-width:1200px;margin:0 auto;padding:4rem 1.25rem;}
-    h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    .about-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
-    .about-text{font-size:1.1rem;line-height:1.85;color:#f0f0f0;}
-    .band-photo{padding:0;border-radius:12px;}
-    .band-photo-inner{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background: rgba(0,0,0,0.18);}
-    .band-photo-inner img{width:100%;height:auto;display:block;}
-    .photo-fallback{display:grid;place-items:center;padding:2.5rem 1.25rem;color:rgba(255,255,255,.85);text-align:center;}
-    .photo-fallback strong{color:var(--accent2);}
-    .debug{margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.75);word-break:break-word;}.band-members{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2rem;align-items:start;}
-    .member {
-            background: #252b3b;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-    .member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 35px rgba(17,24,39,0.12);
-        }
-    .member h3{color:var(--accent2);margin-bottom:.35rem;}
-    .member p{color:var(--muted);}
-    .contact{background:transparent;padding:0;margin-top:2rem;border-radius:0;border:none;}
-    .contact-form{max-width:680px;margin:0 auto;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-    .form-group{margin-bottom:1.15rem;}
-    label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #92400e;
-            font-weight: 600;
-        }
-    input,textarea{width:100%;padding:1rem;background:var(--bg);border:2px solid var(--border);border-radius:10px;color:var(--text);font-size:1rem;}
-    input:focus,textarea:focus{outline:none;border-color:var(--accent1);}
-    .hint{color:rgba(255,255,255,.7);font-size:.95rem;text-align:center;margin-top:1rem;}
-    button[type="submit"]{width:100%;padding:1rem;background:linear-gradient(45deg,var(--accent1),var(--accent2));color:var(--text);border:none;border-radius:999px;font-size:1.05rem;font-weight:900;cursor:pointer;transition:transform .2s,filter .2s;}
-    button[type="submit"]:hover{transform:translateY(-2px);filter:brightness(1.02);}
-    button[type="submit"]:disabled{opacity:.65;cursor:not-allowed;transform:none;}
-    footer {
-            background: #151922;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            color: rgba(243,244,246,0.82);
-        }
-    .social a{color:var(--accent2);margin:0 .9rem;text-decoration:none;font-weight:900;}
-    .social a:hover{text-decoration:underline;}
-    .member-photo{
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      background: #000;
-    }
-    .member small{
-      display:block;
-      margin-top: 0.35rem;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-    }
-
-    /* Responsive band member grid */
-    @media (max-width: 1100px){ .band-members{grid-template-columns:repeat(3,1fr);} }
-    @media (max-width: 768px){ .band-members{grid-template-columns:repeat(2,1fr);} }
-
-
-    @media (max-width:860px){.about-content{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
-    @media (max-width:768px){
-      .menu-btn{display:inline-block;}
-      nav ul{position:absolute;top:100%;right:1.25rem;left:1.25rem;display:none;flex-direction:column;gap:.75rem;background:rgba(10,10,10,.92);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1rem;box-shadow:0 18px 40px rgba(0,0,0,.55);}
-      nav ul.open{display:flex;}
-      nav a{padding:.45rem .25rem;}
-    }
-  
-
-input, textarea {
-            width: 100%;
-            padding: 1rem;
-            background: #151922;
-            border: 2px solid #353b4f;
-            border-radius: 8px;
-            color: #f3f4f6;
-            font-size: 1rem;
+        nav a {
+          padding: 0.45rem 0.25rem;
         }
 
-        /* Shows */
-        .shows-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-            max-width: 900px;
-            margin: 0 auto;
+        .hero-cta {
+          padding-top: 1rem;
         }
+        .hero-tagline {
+          flex-basis: 100%;
+        }
+
         .show-card {
-            display: grid;
-            grid-template-columns: 90px 1fr auto;
-            gap: 1.25rem;
-            align-items: center;
-            background: #1f2534;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 1.25rem;
-        }
-        .show-date {
-            width: 90px;
-            height: 90px;
-            border-radius: 14px;
-            background: rgba(0,0,0,0.18);
-            border: 1px solid rgba(255,255,255,0.06);
-            display: grid;
-            place-items: center;
-            text-align: center;
-        }
-        .show-date .month {
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: rgba(254,202,87,0.95);
-        }
-        .show-date .day {
-            font-size: 1.7rem;
-            font-weight: 900;
-        }
-        .show-info h3 {
-            margin-bottom: 0.25rem;
-            color: rgba(255,255,255,0.94);
-        }
-        .show-meta {
-            opacity: 0.85;
+          grid-template-columns: 1fr;
+          text-align: center;
         }
         .show-actions {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+          justify-content: center;
+        }
+        .show-date {
+          margin: 0 auto;
         }
 
-        /* Mini buttons */
-        .mini-btn {
-            display: inline-block;
-            padding: 0.65rem 1rem;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.95rem;
-            background: rgba(0,0,0,0.18);
-            border: 1px solid rgba(255,255,255,0.10);
-            color: rgba(255,255,255,0.92);
-            transition: transform 0.15s ease, background 0.2s ease;
+        .band-members {
+          grid-template-columns: repeat(2, 1fr);
         }
-        .mini-btn:hover {
-            transform: translateY(-1px);
-            background: rgba(0,0,0,0.28);
-        }
-
-
-        @media (max-width: 768px){
-            .cta-secondary { margin-left: 0; margin-top: 1rem; display: inline-block; }
-            .show-card { grid-template-columns: 1fr; text-align: center; }
-            .show-actions { justify-content: center; }
-            .show-date { margin: 0 auto; }
-        }
-
-</style>
-</head>
-<body>
-<header>
-<nav>
-<a aria-label="Lumus band home" class="logo-link" href="index.html"><span class="logo">LUMUS</span></a>
-<button aria-controls="primaryNav" aria-expanded="false" class="menu-btn" id="menuBtn">MENU</button>
-<ul id="primaryNav"><li><a href="#about">About</a></li><li><a href="#shows">Shows</a></li>
-<li><a href="#music">Music</a></li><li><a href="#members">Band</a></li><li><a href="#contact">Book Us</a></li></ul>
-</nav>
-</header>
-<div class="hero hero-band" role="banner" aria-label="Lumus band photo hero">
-  <img class="hero-band-img" src="band-photo.jpg" alt="Lumus performing live"/>
-</div>
-
-<div class="hero-cta">
-  <a class="cta-button" href="#contact">Book Us For Your Event</a>
-  <a class="cta-button cta-secondary" href="https://venmo.com/u/lumusband" rel="noopener" target="_blank">Tip Jar (Venmo)</a>
-  <p class="hero-tagline">We get you up and dancing with hand-picked, rock-pop anthems—from the ’70s to the 2000's to right about now.</p>
-</div>
-
-<section id="about">
-<h2>About Lumus</h2>
-<div class="about-content">
-<div class="about-text"><p><strong>Lumus</strong> is a five-piece cover band out of Farmington, Maine, chasing the “oh-hellz-yeah!” moment—that split second when the chorus lands and the whole room lights up. We hand-pick every song (no filler), rehearse it tight, and deliver it with big harmonies, punchy grooves, and high energy.</p><p style="margin-top: 1rem;">The band formed in 2022 after a chance meeting over a red drum kit in a pawnshop window (with Lake Street Dive drifting by from a passing car—true story). Since then, we’ve brought the party to spots like Homestead Kitchen Bar &amp; Bakery, Farmhouse Beer Garden, and Ayuh Cider—plus weddings, private events, and festival stages across Maine.</p><p style="margin-top: 1rem;"><em>“This band is like wait-a-minute—What?!”</em> —Shirley from Skowhegan</p></div>
-<div aria-label="Band photo" class="band-photo">
-<div class="band-photo-inner">
-<img alt="Lumus band photo" id="bandImg" src="./band-photo.jpg"/>
-<div class="photo-fallback" hidden="" id="bandFallback"></div>
-</div>
-</div>
-</div>
-</section>
-<section id="shows">
-<h2>Upcoming Shows</h2>
-<p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">
-            Dates update as we book them. Want us at your venue? Use the booking form below.
-        </p>
-<div class="shows-grid"><div class="show-card">
-<div class="show-date">
-<span class="month">FEB</span>
-<span class="day">27</span>
-</div>
-<div class="show-info">
-<h3>The Rack</h3>
-<p class="show-meta">9:30 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.racksugarloaf.com/music-events" target="_blank" rel="noopener">
-  Venue Info
-</a>
-</div>
-</div><div class="show-card">
-<div class="show-date">
-<span class="month">MAY</span>
-<span class="day">24</span>
-</div>
-<div class="show-info">
-<h3>Sandy River Music Festival</h3>
-<p class="show-meta">Saturday • 3:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener" target="_blank">Event page</a>
-</div>
-</div><div class="show-card">
-<div class="show-date">
-<span class="month">JUN</span>
-<span class="day">20</span>
-</div>
-<div class="show-info">
-<h3>Farmhouse Beer Garden</h3>
-<p class="show-meta">5:00–8:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
-</div>
-</div><div class="show-card">
-<div class="show-date">
-<span class="month">AUG</span>
-<span class="day">22</span>
-</div>
-<div class="show-info">
-<h3>Farmhouse Beer Garden</h3>
-<p class="show-meta">5:00–8:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
-</div>
-</div><div class="show-card">
-<div class="show-date">
-<span class="month">SEP</span>
-<span class="day">26</span>
-</div>
-<div class="show-info">
-<h3>Farmhouse Beer Garden <small>(Harvest Fest)</small></h3>
-<p class="show-meta">5:00–8:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener" target="_blank">Details</a>
-</div>
-</div></div>
-</section>
-<section id="members">
-<h2>Meet The Band</h2>
-<div class="band-members">
-<div class="member">
-<img alt="Savannah Nicole Leavitt singing live" class="member-photo" id="savPhoto" loading="lazy" src="./5-DSC_0222.jpg"/>
-<h3>Savannah Nicole Leavitt</h3>
-<p>Vocals</p>
-</div>
-<div class="member">
-<img alt="Jordyn (Jo Jo) Libby performing live" class="member-photo" loading="lazy" src="./17-DSC_0249.jpg"/>
-<h3>Jordyn (Jo Jo) Libby</h3>
-<p>Vocals</p>
-</div>
-<div class="member">
-<img alt="John Lawson playing guitar live" class="member-photo" loading="lazy" src="./16-DSC_0245.jpg"/>
-<h3>John Lawson</h3>
-<p>Guitar</p>
-</div>
-<div class="member">
-<img alt="Ethan Wright playing drums in the background during a live set" class="member-photo" loading="lazy" src="images/ethan-wright.png"/>
-<h3>Ethan Wright</h3>
-<p>Drums</p>
-</div>
-<div class="member">
-<img alt="Frank Giampietro playing bass live" class="member-photo" loading="lazy" src="./7-DSC_0229.jpg"/>
-<h3>Frank Giampietro</h3>
-<p>Bass</p>
-</div>
-</div>
-</section>
-<div class="contact" id="contact">
-<section>
-<h2>Book Lumus</h2>
-<p style="text-align: center; margin-bottom: 2rem; color: rgba(255,255,255,0.85);">
-        Ready to bring live music to your event? Send an inquiry.
-      </p>
-<!-- Netlify Forms: submissions go to Netlify, then forward notifications can be sent to lumusband5@gmail.com -->
-<form action="https://formsubmit.co/lumusband5@gmail.com" class="contact-form" method="POST" name="booking" netlify-honeypot="bot-field">
-<input name="form-name" type="hidden" value="booking"/>
-<input name="_subject" type="hidden" value="Lumus website form: booking"/>
-<input name="_next" type="hidden" value="https://lumusband.github.io/thank-you.html"/>
-<input name="_captcha" type="hidden" value="false"/>
-<p style="display:none;">
-<label>Don’t fill this out if you're human: <input name="bot-field"/></label>
-</p>
-<div class="form-row">
-<div class="form-group">
-<label for="name">Name</label>
-<input autocomplete="name" id="name" name="name" placeholder="Your name" required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="email">Email</label>
-<input autocomplete="email" id="email" name="email" placeholder="your@email.com" required="" type="email"/>
-</div>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="event">Event Type</label>
-<input id="event" name="event" placeholder="Wedding, Corporate Event, Festival, etc." required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="date">Event Date</label>
-<input id="date" name="date" required="" type="date"/>
-</div>
-</div>
-<div class="form-group">
-<label for="message">Message</label>
-<textarea id="message" name="message" placeholder="Tell us about your event (location, time, vibe, etc.)..." required="" rows="5"></textarea>
-</div>
-<button id="submitBtn" type="submit">Send Inquiry</button>
-</form>
-</section>
-</div>
-<footer>
-<p>© <span id="year"></span> Lumus. All rights reserved.</p>
-<div class="social" style="margin-top: 1rem;">
-<a href="https://www.facebook.com/lumusband/about/" rel="noopener noreferrer" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/lumusband/" rel="noopener noreferrer" target="_blank">Instagram</a>
-<a href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank">Venmo</a>
-</div>
-<p style="margin-top: 1rem; color: #888;">@LUMUSBAND</p>
-</footer>
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const menuBtn = document.getElementById("menuBtn");
-    const navList = document.getElementById("primaryNav");
-    function closeMenu(){ navList.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); }
-    menuBtn.addEventListener("click", () => {
-      const open = navList.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    navList.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-
-    // Photo loader: try common name variants if band-photo.jpg fails
-    const bandImg = document.getElementById("bandImg");
-    const bandFallback = document.getElementById("bandFallback");
-    const debugInfo = document.getElementById("debugInfo");
-    const candidates = ["./band-photo.jpg","./band-photo.jpeg","./band-photo.png","./band-photo.JPG","./band-photo.JPEG","./band-photo.PNG"];
-    let i = 0;
-
-    function showDebug() { return; }
-
-    bandImg.addEventListener("error", () => {
-      i++;
-      if (i < candidates.length) {
-        bandImg.src = candidates[i];
-        return;
       }
-      bandImg.hidden = true;
-      bandFallback.hidden = false;
-      showDebug();
-    });
 
-    // Contact form is handled by Netlify Forms (no email app / no JS required).
-  
-    // (Removed: old mailto-based booking code)
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
 
-</script>
-</body>
-</html
-        /* Hero CTA (below band photo) */
-        .hero-cta{
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.25rem 1.25rem 0.5rem;
-            display: flex;
-            gap: 0.9rem;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        .hero-tagline{
-            margin: 0;
-            font-size: 1.15rem;
-            color: rgba(254,202,87,0.95);
-            font-weight: 600;
-            flex: 1 1 420px;
-        }
-        @media (max-width: 768px){
-            .hero-cta{padding-top: 1rem;}
-            .hero-tagline{flex-basis: 100%;}
-        }
->
+  <body>
+    <a class="skip-link" href="#about">Skip to content</a>
+
+    <header>
+      <nav>
+        <a class="logo-link" href="index.html" aria-label="Lumus band home">
+          <span class="logo">LUMUS</span>
+        </a>
+        <button
+          id="menuBtn"
+          class="menu-btn"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+          type="button"
+        >
+          MENU
+        </button>
+        <ul id="primaryNav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#shows">Shows</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#members">Band</a></li>
+          <li><a href="#contact">Book Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero-band" role="banner" aria-label="Lumus band photo hero">
+      <img
+        class="hero-band-img"
+        src="band-photo.jpg"
+        alt="Lumus performing live"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+
+    <div class="hero-cta">
+      <a class="cta-button" href="#contact">Book Us For Your Event</a>
+      <a
+        class="cta-button cta-secondary"
+        href="https://venmo.com/u/lumusband"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Tip Jar (Venmo)</a
+      >
+      <p class="hero-tagline">
+        We get you up and dancing with hand-picked rock-pop anthems—from the ’70s to
+        the 2000s to right about now.
+      </p>
+    </div>
+
+    <main>
+      <section id="about">
+        <h2>About Lumus</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              <strong>Lumus</strong> is a five-piece cover band out of Farmington,
+              Maine, chasing the “oh-hellz-yeah!” moment—that split second when the
+              chorus lands and the whole room lights up. We hand-pick every song
+              (no filler), rehearse it tight, and deliver it with big harmonies,
+              punchy grooves, and high energy.
+            </p>
+            <p style="margin-top: 1rem">
+              The band formed in 2022 after a chance meeting over a red drum kit in
+              a pawnshop window (with Lake Street Dive drifting by from a passing
+              car—true story). Since then, we’ve brought the party to spots like
+              Homestead Kitchen Bar &amp; Bakery, Farmhouse Beer Garden, and Ayuh
+              Cider—plus weddings, private events, and festival stages across
+              Maine.
+            </p>
+            <p style="margin-top: 1rem">
+              <em>“This band is like wait-a-minute—What?!”</em> —Shirley from
+              Skowhegan
+            </p>
+          </div>
+          <div class="band-photo" aria-label="Band photo">
+            <div class="band-photo-inner">
+              <img src="band-photo.jpg" alt="Lumus band photo" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="shows">
+        <h2>Upcoming Shows</h2>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9">
+          Dates update as we book them. Want us at your venue? Use the booking form below.
+        </p>
+
+        <div class="shows-grid">
+          <div class="show-card">
+            <div class="show-date">
+              <span class="month">FEB</span>
+              <span class="day">27</span>
+            </div>
+            <div class="show-info">
+              <h3>The Rack</h3>
+              <p class="show-meta">Details coming soon</p>
+            </div>
+            <div class="show-actions">
+              <a class="mini-btn" href="#contact">Ask us</a>
+            </div>
+          </div>
+
+          <div class="show-card">
+            <div class="show-date">
+              <span class="month">MAY</span>
+              <span class="day">24</span>
+            </div>
+            <div class="show-info">
+              <h3>Sandy River Music Festival</h3>
+              <p class="show-meta">Saturday • 3:00 PM</p>
+            </div>
+            <div class="show-actions">
+              <a
+                class="mini-btn"
+                href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Event page</a
+              >
+            </div>
+          </div>
+
+          <div class="show-card">
+            <div class="show-date">
+              <span class="month">JUN</span>
+              <span class="day">20</span>
+            </div>
+            <div class="show-info">
+              <h3>Farmhouse Beer Garden</h3>
+              <p class="show-meta">5:00–8:00 PM</p>
+            </div>
+            <div class="show-actions">
+              <a
+                class="mini-btn"
+                href="https://www.thefarmhousebeergarden.com/live-music"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Details</a
+              >
+            </div>
+          </div>
+
+          <div class="show-card">
+            <div class="show-date">
+              <span class="month">AUG</span>
+              <span class="day">22</span>
+            </div>
+            <div class="show-info">
+              <h3>Farmhouse Beer Garden</h3>
+              <p class="show-meta">5:00–8:00 PM</p>
+            </div>
+            <div class="show-actions">
+              <a
+                class="mini-btn"
+                href="https://www.thefarmhousebeergarden.com/live-music"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Details</a
+              >
+            </div>
+          </div>
+
+          <div class="show-card">
+            <div class="show-date">
+              <span class="month">SEP</span>
+              <span class="day">26</span>
+            </div>
+            <div class="show-info">
+              <h3>Farmhouse Beer Garden <small>(Harvest Fest)</small></h3>
+              <p class="show-meta">5:00–8:00 PM</p>
+            </div>
+            <div class="show-actions">
+              <a
+                class="mini-btn"
+                href="https://www.thefarmhousebeergarden.com/live-music"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="music">
+        <h2>Music</h2>
+        <div class="music-wrap">
+          <p>
+            Want a taste before you book? The fastest way to hear what we do is our social clips.
+            If you want a specific song for your event, send a note and we’ll tell you if it’s in rotation.
+          </p>
+          <div class="music-actions">
+            <a class="cta-button cta-secondary" href="https://www.instagram.com/lumusband/" target="_blank" rel="noopener noreferrer">Instagram clips</a>
+            <a class="cta-button cta-secondary" href="https://www.facebook.com/lumusband/about/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="cta-button cta-secondary" href="#contact">Request a song</a>
+          </div>
+          <!-- Optional: embed a single YouTube / Vimeo performance here
+          <div style="margin-top:1.25rem; aspect-ratio:16/9; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:#000;">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="Lumus live"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          -->
+        </div>
+      </section>
+
+      <section id="members">
+        <h2>Meet The Band</h2>
+        <div class="band-members">
+          <div class="member">
+            <img
+              class="member-photo"
+              src="5-DSC_0222.jpg"
+              alt="Savannah Nicole Leavitt singing live"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Savannah Nicole Leavitt</h3>
+            <p>Vocals</p>
+          </div>
+          <div class="member">
+            <img
+              class="member-photo"
+              src="17-DSC_0249.jpg"
+              alt="Jordyn (Jo Jo) Libby performing live"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Jordyn (Jo Jo) Libby</h3>
+            <p>Vocals</p>
+          </div>
+          <div class="member">
+            <img
+              class="member-photo"
+              src="16-DSC_0245.jpg"
+              alt="John Lawson playing guitar live"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>John Lawson</h3>
+            <p>Guitar</p>
+          </div>
+          <div class="member">
+            <img
+              class="member-photo"
+              src="images/ethan-wright.jpg"
+              alt="Ethan Wright playing drums in the background during a live set"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Ethan Wright</h3>
+            <p>Drums</p>
+          </div>
+          <div class="member">
+            <img
+              class="member-photo"
+              src="7-DSC_0229.jpg"
+              alt="Frank Giampietro playing bass live"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Frank Giampietro</h3>
+            <p>Bass</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Book Lumus</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.85)">
+          Ready to bring live music to your event? Send an inquiry.
+        </p>
+
+        <!-- FormSubmit (static sites): sends submissions to lumusband5@gmail.com -->
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/lumusband5@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Lumus website form: booking" />
+          <input type="hidden" name="_next" value="https://lumusband.github.io/thank-you.html" />
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- honeypot field (bots fill it; humans won’t) -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="event">Event Type</label>
+              <input
+                id="event"
+                name="event"
+                type="text"
+                placeholder="Wedding, corporate event, festival, etc."
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="date">Event Date</label>
+              <input id="date" name="date" type="date" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us about your event (location, time, vibe, etc.)..."
+              required
+            ></textarea>
+          </div>
+
+          <button id="submitBtn" type="submit">Send Inquiry</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Lumus. All rights reserved.</p>
+      <div class="social" style="margin-top: 1rem">
+        <a href="https://www.facebook.com/lumusband/about/" rel="noopener noreferrer" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/lumusband/" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank">Venmo</a>
+      </div>
+      <p style="margin-top: 1rem; color: #888">@LUMUSBAND</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navList = document.getElementById("primaryNav");
+
+      function closeMenu() {
+        navList.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      }
+
+      menuBtn.addEventListener("click", () => {
+        const open = navList.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      // close after clicking a link
+      navList.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+
+      // close on Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      // close if you click outside the menu
+      document.addEventListener("click", (e) => {
+        if (!navList.classList.contains("open")) return;
+        const clickedInsideNav = navList.contains(e.target) || menuBtn.contains(e.target);
+        if (!clickedInsideNav) closeMenu();
+      });
+    </script>
+  </body>
+</html>
