@@ -1,33 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lumus - Live Cover Band</title>
-
-    <meta
-      name="description"
-      content="Lumus is a high-energy 5-piece cover band bringing live music to weddings, festivals, clubs, and private events."
-    />
-    <meta name="theme-color" content="#0b0d10" />
-
-    <!-- If you ever move off GitHub Pages, update these URLs (favicons + share image) to your new domain. -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-
-    <meta property="og:title" content="Lumus - Live Cover Band" />
-    <meta
-      property="og:description"
-      content="High-energy 5-piece cover band in Maine. Big harmonies, punchy grooves, and a packed dance floor."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lumusband.github.io/band-photo.jpg" />
-    <meta property="og:url" content="https://lumusband.github.io/" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <style>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Lumus - Live Cover Band</title>
+<meta content="Lumus is a high-energy 5-piece cover band bringing live music to weddings, festivals, clubs, and private events." name="description"/>
+<meta content="#0b0d10" name="theme-color"/>
+<!-- If you ever move off GitHub Pages, update these URLs (favicons + share image) to your new domain. -->
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<link href="images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Lumus - Live Cover Band" property="og:title"/>
+<meta content="High-energy 5-piece cover band in Maine. Big harmonies, punchy grooves, and a packed dance floor." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://lumusband.github.io/band-photo.jpg" property="og:image"/>
+<meta content="https://lumusband.github.io/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<style>
       * {
         margin: 0;
         padding: 0;
@@ -150,6 +141,7 @@
         padding: 0;
         margin-top: 0;
         background: #000;
+      position: relative;
       }
       .hero-band-img {
         width: 100%;
@@ -239,6 +231,79 @@
       }
       .cta-secondary:hover {
         background: rgba(0, 0, 0, 0.28);
+      }
+
+      /* Tip Jar image buttons */
+      .tipjar-link {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 14px;
+      }
+
+      .tipjar-link img {
+        width: 160px;
+        max-width: 42vw;
+        height: auto;
+        display: block;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        transition: transform 0.15s ease, filter 0.15s ease;
+      }
+
+      .tipjar-link::before {
+        content: "";
+        position: absolute;
+        inset: -16px;
+        border-radius: 18px;
+        background: radial-gradient(
+          circle at 35% 35%,
+          rgba(255, 107, 107, 0.85),
+          rgba(255, 107, 107, 0) 68%
+        );
+        filter: blur(18px);
+        opacity: 0;
+        transition: opacity 0.15s ease;
+        z-index: -1;
+      }
+
+      .tipjar-link:hover::before {
+        opacity: 1;
+      }
+
+      .tipjar-link:hover img {
+        transform: translateY(-2px);
+        filter: brightness(1.01);
+      }
+
+      .tipjar-hero {
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+        z-index: 5;
+      }
+
+      .tipjar-footer {
+  position: relative;
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+        z-index: 2;
+      }
+
+      .tipjar-footer img {
+        width: 110px;
+        max-width: 34vw;
+      }
+      @media (max-width: 768px) {
+        .tipjar-hero img {
+          width: 128px;
+        }
+        .tipjar-footer img {
+          width: 92px;
+        }
       }
 
       section {
@@ -480,9 +545,10 @@
       }
 
       footer {
+        position: relative;
         background: #151922;
         text-align: center;
-        padding: 2rem;
+        padding: 2rem 2rem 6.25rem;
         margin-top: 3rem;
         border-top: 1px solid var(--border);
         color: rgba(243, 244, 246, 0.82);
@@ -575,66 +641,50 @@
         }
       }
     </style>
-  </head>
-
-  <body>
-    <a class="skip-link" href="#about">Skip to content</a>
-
-    <header>
-      <nav>
-        <a class="logo-link" href="index.html" aria-label="Lumus band home">
-          <span class="logo">LUMUS</span>
-        </a>
-        <button
-          id="menuBtn"
-          class="menu-btn"
-          aria-controls="primaryNav"
-          aria-expanded="false"
-          type="button"
-        >
+</head>
+<body>
+<a class="skip-link" href="#about">Skip to content</a>
+<header>
+<nav>
+<a aria-label="Lumus band home" class="logo-link" href="index.html">
+<span class="logo">LUMUS</span>
+</a>
+<button aria-controls="primaryNav" aria-expanded="false" class="menu-btn" id="menuBtn" type="button">
           MENU
         </button>
-        <ul id="primaryNav">
-          <li><a href="#about">About</a></li>
-          <li><a href="#shows">Shows</a></li>
+<ul id="primaryNav">
+<li><a href="#about">About</a></li>
+<li><a href="#shows">Shows</a></li>
 <li><a href="#members">Band</a></li>
-          <li><a href="#contact">Book Us</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="hero-band" role="banner" aria-label="Lumus band photo hero">
-      <img
-        class="hero-band-img"
-        src="band-photo.jpg"
-        alt="Lumus performing live"
-        decoding="async"
-        fetchpriority="high"
-      />
-    </div>
-
-    <div class="hero-cta">
-      <a class="cta-button" href="#contact">Book Us For Your Event</a>
-      <a class="cta-button cta-secondary cta-mascot" href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank" aria-label="Tip Jar (Venmo)"><img class="cta-mascot-img" src="images/mascot-walkaway-320.png" alt=""></a>
-      <p class="hero-tagline">
+<li><a href="#contact">Book Us</a></li>
+</ul>
+</nav>
+</header>
+<div aria-label="Lumus band photo hero" class="hero-band" role="banner">
+<img alt="Lumus performing live" class="hero-band-img" decoding="async" fetchpriority="high" src="band-photo.jpg"/>
+<a aria-label="Tip Jar (Venmo)" class="tipjar-link tipjar-hero" href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank" title="Tip Jar (Venmo)">
+<img alt="Tip Jar (Venmo)" decoding="async" loading="lazy" src="images/tipjar-cropped.png"/>
+</a>
+</div>
+<div class="hero-cta">
+<a class="cta-button" href="#contact">Book Us For Your Event</a> <p class="hero-tagline">
         We get you up and dancing with hand-picked rock-pop anthems—from the ’70s to
         the 2000s to right about now.
       </p>
-    </div>
-
-    <main>
-      <section id="about">
-        <h2>About Lumus</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              <strong>Lumus</strong> is a five-piece cover band out of Farmington,
+</div>
+<main>
+<section id="about">
+<h2>About Lumus</h2>
+<div class="about-content">
+<div class="about-text">
+<p>
+<strong>Lumus</strong> is a five-piece cover band out of Farmington,
               Maine, chasing the “oh-hellz-yeah!” moment—that split second when the
               chorus lands and the whole room lights up. We hand-pick every song
               (no filler), rehearse it tight, and deliver it with big harmonies,
               punchy grooves, and high energy.
             </p>
-            <p style="margin-top: 1rem">
+<p style="margin-top: 1rem">
               The band formed in 2022 after a chance meeting over a red drum kit in
               a pawnshop window (with Lake Street Dive drifting by from a passing
               car—true story). Since then, we’ve brought the party to spots like
@@ -642,296 +692,214 @@
               Cider—plus weddings, private events, and festival stages across
               Maine.
             </p>
-            <p style="margin-top: 1rem">
-              <em>“This band is like wait-a-minute—What?!”</em> —Shirley from
+<p style="margin-top: 1rem">
+<em>“This band is like wait-a-minute—What?!”</em> —Shirley from
               Skowhegan
             </p>
-          </div>
-          <div class="band-photo" aria-label="Band photo">
-            <div class="band-photo-inner">
-              <img src="images/about-live.jpg" alt="Lumus live on stage" loading="lazy" decoding="async" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="shows">
-        <h2>Upcoming Shows</h2>
-        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9">
+</div>
+<div aria-label="Band photo" class="band-photo">
+<div class="band-photo-inner">
+<img alt="Lumus live on stage" decoding="async" loading="lazy" src="images/about-live.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section id="shows">
+<h2>Upcoming Shows</h2>
+<p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9">
           Dates update as we book them. Want us at your venue? Use the booking form below.
         </p>
+<div class="shows-grid">
+<div class="show-card">
+<div class="show-date">
+<span class="month">FEB</span>
+<span class="day">27</span>
+</div>
+<div class="show-info">
+<h3>The Rack</h3>
+<p class="show-meta">Friday • 9:30 PM–close</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.racksugarloaf.com/music-events" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
+<div class="show-card">
+<div class="show-date">
+<span class="month">MAY</span>
+<span class="day">24</span>
+</div>
+<div class="show-info">
+<h3>Sandy River Music Festival</h3>
+<p class="show-meta">Sunday • 3:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
+<div class="show-card">
+<div class="show-date">
+<span class="month">JUN</span>
+<span class="day">6</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">Saturday • 5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
+<div class="show-card">
+<div class="show-date">
+<span class="month">JUN</span>
+<span class="day">13</span>
+</div>
+<div class="show-info">
+<h3>Wild Fest at Titcomb Mountain</h3>
+<p class="show-meta">Saturday • Time TBA</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.titcombmountain.com/the-mountain" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
 
-        <div class="shows-grid">
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">FEB</span>
-              <span class="day">27</span>
-            </div>
-            <div class="show-info">
-              <h3>The Rack</h3>
-              <p class="show-meta">Friday • 9:30 PM–close</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.racksugarloaf.com/music-events" target="_blank" rel="noopener noreferrer">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">MAY</span>
-              <span class="day">24</span>
-            </div>
-            <div class="show-info">
-              <h3>Sandy River Music Festival</h3>
-              <p class="show-meta">Sunday • 3:00 PM</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener noreferrer" target="_blank">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">JUN</span>
-              <span class="day">6</span>
-            </div>
-            <div class="show-info">
-              <h3>Farmhouse Beer Garden</h3>
-              <p class="show-meta">Saturday • 5:00–8:00 PM</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">JUN</span>
-              <span class="day">13</span>
-            </div>
-            <div class="show-info">
-              <h3>Wild Fest at Titcomb Mountain</h3>
-              <p class="show-meta">Saturday • Time TBA</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.titcombmountain.com/the-mountain" target="_blank" rel="noopener noreferrer">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">JUN</span>
-              <span class="day">20</span>
-            </div>
-            <div class="show-info">
-              <h3>Farmhouse Beer Garden</h3>
-              <p class="show-meta">Saturday • 5:00–8:00 PM</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">AUG</span>
-              <span class="day">22</span>
-            </div>
-            <div class="show-info">
-              <h3>Farmhouse Beer Garden</h3>
-              <p class="show-meta">Saturday • 5:00–8:00 PM</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">SEP</span>
-              <span class="day">12</span>
-            </div>
-            <div class="show-info">
-              <h3>Morrison Hill Orchard</h3>
-              <p class="show-meta">Saturday • 4:00–7:00 PM</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" target="_blank" rel="noopener noreferrer">Details</a>
-            </div>
-          </div>
-
-
-          <div class="show-card">
-            <div class="show-date">
-              <span class="month">OCT</span>
-              <span class="day">10</span>
-            </div>
-            <div class="show-info">
-              <h3>Morrison Hill Orchard</h3>
-              <p class="show-meta">Saturday • 4:00–7:00 PM</p>
-            </div>
-            <div class="show-actions">
-              <a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" target="_blank" rel="noopener noreferrer">Details</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
+<div class="show-card">
+<div class="show-date">
+<span class="month">AUG</span>
+<span class="day">22</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">Saturday • 5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
+<div class="show-card">
+<div class="show-date">
+<span class="month">SEP</span>
+<span class="day">12</span>
+</div>
+<div class="show-info">
+<h3>Morrison Hill Orchard</h3>
+<p class="show-meta">Saturday • 4:00–7:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div><div class="show-card">
+<div class="show-date">
+<span class="month">SEP</span>
+<span class="day">26</span>
+</div>
+<div class="show-info">
+<h3>Farmhouse Beer Garden</h3>
+<p class="show-meta">Saturday • 5:00–8:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
+<div class="show-card">
+<div class="show-date">
+<span class="month">OCT</span>
+<span class="day">10</span>
+</div>
+<div class="show-info">
+<h3>Morrison Hill Orchard</h3>
+<p class="show-meta">Saturday • 4:00–7:00 PM</p>
+</div>
+<div class="show-actions">
+<a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" rel="noopener noreferrer" target="_blank">Details</a>
+</div>
+</div>
+</div>
+</section>
 <section id="members">
-        <h2>Meet The Band</h2>
-        <div class="band-members">
-          <div class="member">
-            <img
-              class="member-photo"
-              src="5-DSC_0222.jpg"
-              alt="Savannah Nicole Leavitt singing live"
-              loading="lazy"
-              decoding="async"
-            />
-            <h3>Savannah Nicole Leavitt</h3>
-            <p>Vocals</p>
-          </div>
-          <div class="member">
-            <img
-              class="member-photo"
-              src="17-DSC_0249.jpg"
-              alt="Jordyn (Jo Jo) Libby performing live"
-              loading="lazy"
-              decoding="async"
-            />
-            <h3>Jordyn (Jo Jo) Libby</h3>
-            <p>Vocals</p>
-          </div>
-          <div class="member">
-            <img
-              class="member-photo"
-              src="16-DSC_0245.jpg"
-              alt="John Lawson playing guitar live"
-              loading="lazy"
-              decoding="async"
-            />
-            <h3>John Lawson</h3>
-            <p>Guitar</p>
-          </div>
-          <div class="member">
-            <img
-              class="member-photo"
-              src="images/ethan-wright.jpg"
-              alt="Ethan Wright playing drums in the background during a live set"
-              loading="lazy"
-              decoding="async"
-            />
-            <h3>Ethan Wright</h3>
-            <p>Drums</p>
-          </div>
-          <div class="member">
-            <img
-              class="member-photo"
-              src="7-DSC_0229.jpg"
-              alt="Frank Giampietro playing bass live"
-              loading="lazy"
-              decoding="async"
-            />
-            <h3>Frank Giampietro</h3>
-            <p>Bass</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Book Lumus</h2>
-        <p style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.85)">
+<h2>Meet The Band</h2>
+<div class="band-members">
+<div class="member">
+<img alt="Savannah Nicole Leavitt singing live" class="member-photo" decoding="async" loading="lazy" src="5-DSC_0222.jpg"/>
+<h3>Savannah Nicole Leavitt</h3>
+<p>Vocals</p>
+</div>
+<div class="member">
+<img alt="Jordyn (Jo Jo) Libby performing live" class="member-photo" decoding="async" loading="lazy" src="17-DSC_0249.jpg"/>
+<h3>Jordyn (Jo Jo) Libby</h3>
+<p>Vocals</p>
+</div>
+<div class="member">
+<img alt="John Lawson playing guitar live" class="member-photo" decoding="async" loading="lazy" src="16-DSC_0245.jpg"/>
+<h3>John Lawson</h3>
+<p>Guitar</p>
+</div>
+<div class="member">
+<img alt="Ethan Wright playing drums in the background during a live set" class="member-photo" decoding="async" loading="lazy" src="images/ethan-wright.jpg"/>
+<h3>Ethan Wright</h3>
+<p>Drums</p>
+</div>
+<div class="member">
+<img alt="Frank Giampietro playing bass live" class="member-photo" decoding="async" loading="lazy" src="7-DSC_0229.jpg"/>
+<h3>Frank Giampietro</h3>
+<p>Bass</p>
+</div>
+</div>
+</section>
+<section id="contact">
+<h2>Book Lumus</h2>
+<p style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.85)">
           Ready to bring live music to your event? Send an inquiry.
         </p>
-
-        <!-- FormSubmit (static sites): sends submissions to lumusband5@gmail.com -->
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/lumusband5@gmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="Lumus website form: booking" />
-          <input type="hidden" name="_next" value="https://lumusband.github.io/thank-you.html" />
-          <input type="hidden" name="_captcha" value="false" />
-          <!-- honeypot field (bots fill it; humans won’t) -->
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Your name"
-                autocomplete="name"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="your@email.com"
-                autocomplete="email"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="event">Event Type</label>
-              <input
-                id="event"
-                name="event"
-                type="text"
-                placeholder="Wedding, corporate event, festival, etc."
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="date">Event Date</label>
-              <input id="date" name="date" type="date" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Tell us about your event (location, time, vibe, etc.)..."
-              required
-            ></textarea>
-          </div>
-
-          <button id="submitBtn" type="submit">Send Inquiry</button>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <p>© <span id="year"></span> Lumus. All rights reserved.</p>
-      <div class="social" style="margin-top: 1rem">
-        <a href="https://www.facebook.com/lumusband/about/" rel="noopener noreferrer" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/lumusband/" rel="noopener noreferrer" target="_blank">Instagram</a>
-        <a href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank">Venmo</a>
-      </div>
-      <p style="margin-top: 1rem; color: #888">@LUMUSBAND</p>
-    </footer>
-
-    <script>
+<!-- FormSubmit (static sites): sends submissions to lumusband5@gmail.com -->
+<form action="https://formsubmit.co/lumusband5@gmail.com" class="contact-form" method="POST">
+<input name="_subject" type="hidden" value="Lumus website form: booking"/>
+<input name="_next" type="hidden" value="https://lumusband.github.io/thank-you.html"/>
+<input name="_captcha" type="hidden" value="false"/>
+<!-- honeypot field (bots fill it; humans won’t) -->
+<input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
+<div class="form-row">
+<div class="form-group">
+<label for="name">Name</label>
+<input autocomplete="name" id="name" name="name" placeholder="Your name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input autocomplete="email" id="email" name="email" placeholder="your@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="event">Event Type</label>
+<input id="event" name="event" placeholder="Wedding, corporate event, festival, etc." required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="date">Event Date</label>
+<input id="date" name="date" type="date"/>
+</div>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell us about your event (location, time, vibe, etc.)..." required="" rows="5"></textarea>
+</div>
+<button id="submitBtn" type="submit">Send Inquiry</button>
+</form>
+</section>
+</main>
+<footer>
+<p>© <span id="year"></span> Lumus. All rights reserved.</p>
+<div class="social" style="margin-top: 1rem">
+<a href="https://www.facebook.com/lumusband/about/" rel="noopener noreferrer" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/lumusband/" rel="noopener noreferrer" target="_blank">Instagram</a>
+<a href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank">Venmo</a>
+</div>
+<p style="margin-top: 1rem; color: #888">@LUMUSBAND</p>
+<a aria-label="Tip Jar (Venmo)" class="tipjar-link tipjar-footer" href="https://venmo.com/u/lumusband" rel="noopener noreferrer" target="_blank" title="Tip Jar (Venmo)">
+<img alt="Tip Jar (Venmo)" decoding="async" loading="lazy" src="images/tipjar-cropped.png"/>
+<span class="sr-only">Tip Jar (Venmo)</span>
+</a>
+</footer>
+<script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
       const menuBtn = document.getElementById("menuBtn");
@@ -962,5 +930,5 @@
         if (!clickedInsideNav) closeMenu();
       });
     </script>
-  </body>
+</body>
 </html>
