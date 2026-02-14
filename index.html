@@ -349,10 +349,14 @@
         border: 1px solid var(--border);
         background: rgba(0, 0, 0, 0.18);
       }
-      .band-photo-inner img {
+      .band-photo-inner img,
+      .band-photo-inner video {
         width: 100%;
         height: auto;
         display: block;
+      }
+      .band-photo-inner video {
+        background: #000;
       }
 
       /* Shows */
@@ -703,7 +707,10 @@
 </div>
 <div aria-label="Band photo" class="band-photo">
 <div class="band-photo-inner">
-<img alt="Lumus live on stage" decoding="async" loading="lazy" src="images/about-live.jpg"/>
+<video class="about-video" autoplay muted loop playsinline controls preload="metadata" poster="images/about-live.jpg">
+  <source src="videos/whistlestop_44s_web.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 </div>
 </div>
 </div>
