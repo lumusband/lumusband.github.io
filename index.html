@@ -242,7 +242,7 @@
       }
 
       .tipjar-link img {
-        width: var(--tipjar-size, 112px);
+        width: var(--tipjar-size, 90px);
         max-width: none;
         height: auto;
         display: block;
@@ -283,7 +283,7 @@
         right: calc(12px + env(safe-area-inset-right));
         bottom: calc(12px + env(safe-area-inset-bottom));
         z-index: 5;
-        --tipjar-size: 112px;
+        --tipjar-size: 90px;
       }
 
       .tipjar-footer {
@@ -291,25 +291,25 @@
         right: calc(12px + env(safe-area-inset-right));
         bottom: calc(12px + env(safe-area-inset-bottom));
         z-index: 2;
-        --tipjar-size: 96px;
+        --tipjar-size: 77px;
       }
 
       /* Smaller tip jar on phones */
       @media (max-width: 768px) {
         .tipjar-hero {
-          --tipjar-size: 84px;
+          --tipjar-size: 68px;
         }
         .tipjar-footer {
-          --tipjar-size: 72px;
+          --tipjar-size: 58px;
         }
       }
 
       @media (max-width: 420px) {
         .tipjar-hero {
-          --tipjar-size: 72px;
+          --tipjar-size: 58px;
         }
         .tipjar-footer {
-          --tipjar-size: 64px;
+          --tipjar-size: 52px;
         }
       }
 
@@ -349,14 +349,10 @@
         border: 1px solid var(--border);
         background: rgba(0, 0, 0, 0.18);
       }
-      .band-photo-inner img,
-      .band-photo-inner video {
+      .band-photo-inner img {
         width: 100%;
         height: auto;
         display: block;
-      }
-      .band-photo-inner video {
-        background: #000;
       }
 
       /* Shows */
@@ -707,10 +703,7 @@
 </div>
 <div aria-label="Band photo" class="band-photo">
 <div class="band-photo-inner">
-<video class="about-video" autoplay muted loop playsinline controls preload="metadata" poster="images/about-live.jpg">
-  <source src="videos/whistlestop_44s_web.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img alt="Lumus live on stage" decoding="async" loading="lazy" src="images/about-live.jpg"/>
 </div>
 </div>
 </div>
@@ -718,113 +711,129 @@
 <section id="shows">
 <h2>Upcoming Shows</h2>
 <p style="text-align: center; margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9">
-          Dates update as we book them. Want us at your venue? Use the booking form below.
+          Dates update as we book them. Want us at your venue? Use the booking form below.<span style="display:block; margin-top:0.6rem; font-size:0.9rem; opacity:0.75">Last updated: February 19, 2026</span>
         </p>
 <div class="shows-grid">
-<div class="show-card">
-<div class="show-date">
-<span class="month">FEB</span>
-<span class="day">27</span>
-</div>
-<div class="show-info">
-<h3>The Rack</h3>
-<p class="show-meta">Friday • 9:30 PM–close</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.racksugarloaf.com/music-events" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
-<div class="show-card">
-<div class="show-date">
-<span class="month">MAY</span>
-<span class="day">24</span>
-</div>
-<div class="show-info">
-<h3>Sandy River Music Festival</h3>
-<p class="show-meta">Sunday • 3:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
-<div class="show-card">
-<div class="show-date">
-<span class="month">JUN</span>
-<span class="day">6</span>
-</div>
-<div class="show-info">
-<h3>Farmhouse Beer Garden</h3>
-<p class="show-meta">Saturday • 5:00–8:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
-<div class="show-card">
-<div class="show-date">
-<span class="month">JUN</span>
-<span class="day">13</span>
-</div>
-<div class="show-info">
-<h3>Wild Fest at Titcomb Mountain</h3>
-<p class="show-meta">Saturday • Time TBA</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.titcombmountain.com/the-mountain" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
+  <div class="show-card">
+    <div class="show-date"><span class="month">FEB</span><span class="day">27</span></div>
+    <div class="show-info">
+      <h3>The Rack</h3>
+      <p class="show-meta">Friday • 9:30 PM–close</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.racksugarloaf.com/music-events" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
 
-<div class="show-card">
-<div class="show-date">
-<span class="month">AUG</span>
-<span class="day">22</span>
-</div>
-<div class="show-info">
-<h3>Farmhouse Beer Garden</h3>
-<p class="show-meta">Saturday • 5:00–8:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
-<div class="show-card">
-<div class="show-date">
-<span class="month">SEP</span>
-<span class="day">12</span>
-</div>
-<div class="show-info">
-<h3>Morrison Hill Orchard</h3>
-<p class="show-meta">Saturday • 4:00–7:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div><div class="show-card">
-<div class="show-date">
-<span class="month">SEP</span>
-<span class="day">26</span>
-</div>
-<div class="show-info">
-<h3>Farmhouse Beer Garden</h3>
-<p class="show-meta">Saturday • 5:00–8:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
-<div class="show-card">
-<div class="show-date">
-<span class="month">OCT</span>
-<span class="day">10</span>
-</div>
-<div class="show-info">
-<h3>Morrison Hill Orchard</h3>
-<p class="show-meta">Saturday • 4:00–7:00 PM</p>
-</div>
-<div class="show-actions">
-<a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" rel="noopener noreferrer" target="_blank">Details</a>
-</div>
-</div>
+  <div class="show-card">
+    <div class="show-date"><span class="month">MAY</span><span class="day">24</span></div>
+    <div class="show-info">
+      <h3>Sandy River Music Festival</h3>
+      <p class="show-meta">Sunday • 3:00 PM</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.whistlestopconcertseries.com/sandy-river-music-festival-2026" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">JUN</span><span class="day">6</span></div>
+    <div class="show-info">
+      <h3>Farmhouse Beer Garden</h3>
+      <p class="show-meta">Saturday • 5:00–8:00 PM</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">JUN</span><span class="day">13</span></div>
+    <div class="show-info">
+      <h3>Wild Fest at Titcomb Mountain</h3>
+      <p class="show-meta">Saturday • Time TBA</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.titcombmountain.com/" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">JUL</span><span class="day">3</span></div>
+    <div class="show-info">
+      <h3>The Biergarten at the Skowhegan Spinning Mill</h3>
+      <p class="show-meta">Friday • Time TBA</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.skowheganbiergarten.com/" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">JUL</span><span class="day">4</span></div>
+    <div class="show-info">
+      <h3>Bigelow Brewing Company</h3>
+      <p class="show-meta">Saturday • Time TBA</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://bigelowbrewing.com/bigelow-brewing-events/" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">AUG</span><span class="day">14</span></div>
+    <div class="show-info">
+      <h3>The Biergarten at the Skowhegan Spinning Mill</h3>
+      <p class="show-meta">Friday • Time TBA</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.skowheganbiergarten.com/" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">AUG</span><span class="day">22</span></div>
+    <div class="show-info">
+      <h3>Farmhouse Beer Garden</h3>
+      <p class="show-meta">Saturday • 5:00–8:00 PM</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">SEP</span><span class="day">12</span></div>
+    <div class="show-info">
+      <h3>Morrison Hill Orchard</h3>
+      <p class="show-meta">Saturday • 4:00–7:00 PM</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">SEP</span><span class="day">26</span></div>
+    <div class="show-info">
+      <h3>Farmhouse Beer Garden</h3>
+      <p class="show-meta">Saturday • 5:00–8:00 PM</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.thefarmhousebeergarden.com/live-music" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
+
+  <div class="show-card">
+    <div class="show-date"><span class="month">OCT</span><span class="day">10</span></div>
+    <div class="show-info">
+      <h3>Morrison Hill Orchard</h3>
+      <p class="show-meta">Saturday • 4:00–7:00 PM</p>
+    </div>
+    <div class="show-actions">
+      <a class="mini-btn" href="https://www.morrisonhillorchard.net/upcoming-events" target="_blank" rel="noopener noreferrer">Details</a>
+    </div>
+  </div>
 </div>
 </section>
 <section id="members">
