@@ -770,6 +770,7 @@
 
       .halloween-bat span {
         display: block;
+        transform: scaleX(-1);
         animation: halloween-bat-flap 0.34s ease-in-out infinite alternate;
       }
 
@@ -812,8 +813,8 @@
       }
 
       @keyframes halloween-bat-flap {
-        from { transform: scaleY(0.72) rotate(-4deg); }
-        to { transform: scaleY(1.12) rotate(4deg); }
+        from { transform: scaleX(-1) scaleY(0.72) rotate(-4deg); }
+        to { transform: scaleX(-1) scaleY(1.12) rotate(4deg); }
       }
 
       @keyframes halloween-glow {
