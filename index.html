@@ -671,14 +671,16 @@
       }
 
       .hero-band-img {
-        width: min(100%, 1200px);
+        width: auto;
+        height: auto;
+        max-width: 100%;
         max-height: 760px;
         margin: 0 auto;
-        object-fit: contain;
+        object-fit: unset;
         object-position: center;
         border-radius: 20px;
         border: 1px solid rgba(105, 193, 255, 0.30);
-        background: #040a12;
+        background: transparent;
         box-shadow:
           0 30px 75px rgba(0, 0, 0, 0.52),
           0 0 55px rgba(47, 156, 255, 0.13);
