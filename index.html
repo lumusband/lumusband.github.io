@@ -711,6 +711,135 @@
           border-radius: 14px;
         }
       }
+
+      /* October 23 Halloween show */
+      .halloween-show {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border-color: rgba(255, 151, 57, 0.55);
+        background:
+          radial-gradient(circle at 12% 25%, rgba(255, 139, 31, 0.18), transparent 32%),
+          radial-gradient(circle at 88% 76%, rgba(166, 120, 255, 0.20), transparent 36%),
+          linear-gradient(135deg, #152a46 0%, #241a3d 100%);
+        box-shadow:
+          0 14px 38px rgba(0, 8, 20, 0.28),
+          0 0 34px rgba(255, 139, 31, 0.10);
+      }
+
+      .halloween-show .show-date,
+      .halloween-show .show-info,
+      .halloween-show .show-actions {
+        position: relative;
+        z-index: 2;
+      }
+
+      .halloween-show .show-date {
+        border-color: rgba(255, 171, 79, 0.34);
+        background: rgba(8, 10, 24, 0.56);
+      }
+
+      .halloween-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.65rem;
+        padding: 0.35rem 0.72rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 173, 83, 0.48);
+        background: rgba(255, 128, 21, 0.14);
+        color: #ffd5a1;
+        font-size: 0.82rem;
+        font-weight: 950;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        animation: halloween-glow 1.8s ease-in-out infinite alternate;
+      }
+
+      .halloween-bat {
+        position: absolute;
+        z-index: 3;
+        left: -6%;
+        top: 58%;
+        font-size: clamp(1.6rem, 3vw, 2.35rem);
+        line-height: 1;
+        pointer-events: none;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.65));
+        animation: halloween-bat-flight 7s linear infinite;
+      }
+
+      .halloween-bat span {
+        display: block;
+        animation: halloween-bat-flap 0.34s ease-in-out infinite alternate;
+      }
+
+      @keyframes halloween-bat-flight {
+        0% {
+          left: -6%;
+          top: 62%;
+          transform: rotate(-12deg) scale(0.72);
+        }
+        16% {
+          left: 13%;
+          top: 10%;
+          transform: rotate(12deg) scale(1);
+        }
+        33% {
+          left: 36%;
+          top: 66%;
+          transform: rotate(-10deg) scale(0.88);
+        }
+        50% {
+          left: 57%;
+          top: 7%;
+          transform: rotate(10deg) scale(1.08);
+        }
+        68% {
+          left: 77%;
+          top: 64%;
+          transform: rotate(-8deg) scale(0.84);
+        }
+        85% {
+          left: 93%;
+          top: 16%;
+          transform: rotate(10deg) scale(0.98);
+        }
+        100% {
+          left: 106%;
+          top: 54%;
+          transform: rotate(-6deg) scale(0.72);
+        }
+      }
+
+      @keyframes halloween-bat-flap {
+        from { transform: scaleY(0.72) rotate(-4deg); }
+        to { transform: scaleY(1.12) rotate(4deg); }
+      }
+
+      @keyframes halloween-glow {
+        from {
+          box-shadow: 0 0 0 rgba(255, 139, 31, 0);
+          transform: translateY(0);
+        }
+        to {
+          box-shadow: 0 0 18px rgba(255, 139, 31, 0.24);
+          transform: translateY(-1px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .halloween-bat {
+          left: auto;
+          right: 1rem;
+          top: 1rem;
+        }
+
+        .halloween-bat,
+        .halloween-bat span,
+        .halloween-badge {
+          animation: none !important;
+        }
+      }
 </style>
 </head>
 <body>
@@ -853,11 +982,13 @@
         </div>
       </div>
 
-      <div class="show-card">
+      <div class="show-card halloween-show">
+        <span class="halloween-bat" aria-hidden="true"><span>🦇</span></span>
         <div class="show-date"><span class="month">OCT</span><span class="day">23</span></div>
         <div class="show-info">
           <h3>The Homestead</h3>
           <p class="show-meta">Friday • 2026 • Farmington, Maine</p>
+          <span class="halloween-badge">🎃 Halloween Party</span>
         </div>
       </div>
 
